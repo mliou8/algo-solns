@@ -2,30 +2,21 @@
 // Given 100, and [99, 42, 31, 50] need to return [ 99, 50, 42, 31]
 
 function sortScores(unorderedScores, highestPossibleScore) {
-
-  // array of 0s at indices 0..highestPossibleScore
   var scoreCounts = [];
+  //Populates an array full of 0's
   for (var i = 0; i < highestPossibleScore + 1; i++) {
-      scoreCounts.push(0);
+    scoreCounts.push(0);
   }
-
-  // populate scoreCounts
   unorderedScores.forEach(function(score) {
-      scoreCounts[score]++;
-  });
-
-  // populate the final sorted array
+    scoreCounts[score]++;
+  })
   var sortedScores = [];
-
-  // for each item in scoreCounts
-  for (var score = highestPossibleScore; score >= 0; score--) {
-      var count = scoreCounts[score];
-
-      // for the number of times the item occurs
-      for (var time = 0; time < count; time++) {
-          sortedScores.push(score);
-      }
+  console.log("scoreCounts ", scoreCounts)
+  for (var i = highestPossibleScore; i >= 0; i--) {
+    var count = scoreCounts[i];
+    for (var times = 0 ; times < count; times ++) {
+      sortedScores.push(i);
+    }
   }
-
   return sortedScores;
 }

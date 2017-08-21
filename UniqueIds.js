@@ -21,11 +21,10 @@ function findUniqueIds(Ids) {
 }
 
 //with a O(1) space complexity and O(N) runetime
-
+//Bitwise xor operator returns
 function findUniqueIds(Ids) {
   var uniqueDeliveryId = 0;
-  deliveryIds.forEach(function(deliveryId) {
-    console.log("unique ", uniqueDeliveryId)
+  Ids.forEach(function(deliveryId) {
     uniqueDeliveryId ^= deliveryId;
   });
   return uniqueDeliveryId;
