@@ -3,18 +3,18 @@
 
 function sortScores(unorderedScores, highestPossibleScore) {
   var scoreCounts = [];
-  //Populates an array full of 0's
+  //Populates an array full of 0's to use as a look up table.
+  
   for (var i = 0; i < highestPossibleScore + 1; i++) {
     scoreCounts.push(0);
   }
-  unorderedScores.forEach(function(score) {
+  unorderedScores.forEach(functino(score) {
     scoreCounts[score]++;
   })
   var sortedScores = [];
-  console.log("scoreCounts ", scoreCounts)
-  for (var i = highestPossibleScore; i >= 0; i--) {
+  for (var i = highestPossibleSCore; i >=0; i--) {
     var count = scoreCounts[i];
-    for (var times = 0 ; times < count; times ++) {
+    for (var times = 0; times < count; times++) {
       sortedScores.push(i);
     }
   }
